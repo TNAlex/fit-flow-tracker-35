@@ -13,7 +13,7 @@ export function AppHeader() {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
-  const name = (user?.user_metadata?.full_name as string | undefined) ?? user?.email ?? null;
+  const name = (user?.user_metadata?.["full_name"] as string | undefined) ?? user?.email ?? null;
 
   async function handleSignOut() {
     await queryClient.cancelQueries();
